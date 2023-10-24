@@ -36,5 +36,7 @@
     JOIN db.properties p on p.id = p.id = po.id
     Join db.pro_type pt on pt.id = p.property_type_id
     WHERE property_id = ?
-        
+
+
+# https://github.com/Houssam-OUATMANI/immobilis.git
 

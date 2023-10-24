@@ -20,7 +20,7 @@ require "../components/navbar_admin.php";
                 <img style="width: 100%" src="public/assets/house.jpg" alt="">
             </div>
             <div class="card-footer">
-                <a class="btn btn-success" href="">Ajouter un bien</a>
+                <a class="btn btn-success" href="pages/admin/properties/create.php">Ajouter un bien</a>
                 <a class="btn btn-info" href="">Voir les Biens</a>
             </div>
         </div>
