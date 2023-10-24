@@ -1,5 +1,5 @@
 <?php
-$title = "Ajouter iun bien";
+$title = "Ajouter uun bien";
 require  "../../partials/header.php";
 if($_SESSION["connected"] !== true || !isset($_SESSION["connected"])){
     header("Location: /immobilis/pages/admin/login.php");
@@ -27,7 +27,7 @@ $propertyTypes = $propertyType->findAll();
     <?php  require "../../components/flash.php";?>
     <h1>Ajouter un bien</h1>
 
-    <form action="pages/admin/properties/store.php" method="POST">
+    <form action="pages/admin/properties/store.php" method="POST" enctype="multi-data">
         <div class="row">
             <div class="col">
                 <?php $name="title"; $label="Titre du bien"; require "../../components/Input.php"?>
@@ -36,7 +36,7 @@ $propertyTypes = $propertyType->findAll();
                 <?php $name="floor"; $label="Etage";  $type="number"; require "../../components/Input.php"?>
                 <?php $name="bedrooms"; $label="Nombre de chambres a coucher";  $type="number"; require "../../components/Input.php"?>
                 <?php $name="bathrooms"; $label="Nombre de salles de bains";  $type="number"; require "../../components/Input.php"?>
-                <?php $name="images"; $type="file";  $multiple=true; $label="images"; require "../../components/Input.php"?>
+                <?php $name="images[]"; $type="file";  $multiple=true; $label="images"; require "../../components/Input.php"?>
                 <?php $name="surface"; $type="number"; $label="Surface"; require "../../components/Input.php"?>
 
             </div>
@@ -47,7 +47,7 @@ $propertyTypes = $propertyType->findAll();
                 <?php $name="zipcode"; $type="text"; $label="Code postal"; require "../../components/Input.php"?>
                 <?php $name="description"; $type="textarea"; $label="Description"; require "../../components/Input.php"?>
                 <?php $name="type"; $multiple=false; $label="Type de bien"; $value=$propertyTypes; require "../../components/Select.php"?>
-                <?php $name="options"; $multiple=true; $label="Options"; $value=$options; require "../../components/Select.php"?>
+                <?php $name="options[]"; $multiple=true; $label="Options"; $value=$options; require "../../components/Select.php"?>
 
 
             </div>
