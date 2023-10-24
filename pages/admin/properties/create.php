@@ -27,7 +27,7 @@ $propertyTypes = $propertyType->findAll();
     <?php  require "../../components/flash.php";?>
     <h1>Ajouter un bien</h1>
 
-    <form action="pages/admin/properties/store.php" method="POST" enctype="multi-data">
+    <form action="pages/admin/properties/store.php" method="POST" enctype="multipart/form-data">
         <div class="row">
             <div class="col">
                 <?php $name="title"; $label="Titre du bien"; require "../../components/Input.php"?>
