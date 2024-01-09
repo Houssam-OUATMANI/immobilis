@@ -79,6 +79,16 @@ class Property
 
         $stmt = $this->pdo->prepare($query);
         $stmt->execute([$id]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetch();
+    }
+
+
+    public function contact (string $firstname, string $lastname, string $email, string $message, int $propertyId)
+    {
+        $query = "INSERT INTO immobilis.contacts(firstname, lastname, email, message, property_id)
+                    VALUES (?,?,?,?,?)
+                ";
+        $stmt = $this->pdo->prepare($query);
+        return $stmt->execute([$firstname, $lastname, $email, $message, $propertyId]);
     }
 }

@@ -15,7 +15,10 @@ if( count( $admin->getAdmins())  === 0 ) {
 // Get all properties
 $property = new Property($pdo);
 $properties = $property->findAll();
-var_dump($properties[0]);
+
+
+phpinfo()
+
 ?>
 <div class="container">
     <?php  require  "pages/components/flash.php";?>
